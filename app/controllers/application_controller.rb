@@ -42,7 +42,7 @@ class ApplicationController < Sinatra::Base
   end
 
   get '/users/:slug' do
-    @user = User.find_by_id(params[:id])
+    @user = User.find_by_slug(params[:slug])
     erb :show
   end
 
