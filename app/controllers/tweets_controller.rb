@@ -23,6 +23,8 @@ class TweetsController < ApplicationController
     if tweet.save
       redirect "/tweets/#{tweet.id}"
     else
+      redirect '/tweets/new'
+    end
 
   end
 end
