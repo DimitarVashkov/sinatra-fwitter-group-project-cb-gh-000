@@ -39,4 +39,13 @@ class TweetsController < ApplicationController
       redirect '/login'
     end
   end
+
+  get '/tweets/:id/edit' do
+    
+  end
+
+  patch '/tweets/:id' do
+
+  end
+
 end
