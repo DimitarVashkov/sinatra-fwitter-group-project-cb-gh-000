@@ -18,9 +18,10 @@ class TweetsController < ApplicationController
   end
 
   get '/tweets/:id' do
+    @tweet = Tweet.find_by_id(params[:id])
     
   end
-  
+
   post '/tweets' do
     if logged_in?
       tweet = current_user.tweets.build(content: params[:content])
