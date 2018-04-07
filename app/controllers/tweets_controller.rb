@@ -1,7 +1,11 @@
 class TweetsController < ApplicationController
 
   get '/tweets' do
-    @tweets = Tweet.all
-    erb :'tweets/index'
+    if logged_in?
+      @tweets = Tweet.all
+      erb :'tweets/index'
+    else
+      
+    end
   end
 end
