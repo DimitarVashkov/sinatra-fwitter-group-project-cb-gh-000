@@ -27,7 +27,7 @@ class ApplicationController < Sinatra::Base
 
     if user.save
       session[:user_id] = user.id
-      redirect '/'
+      redirect '/tweets'
     else
       redirect '/signup'
     end
