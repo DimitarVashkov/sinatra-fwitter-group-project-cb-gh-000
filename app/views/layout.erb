@@ -5,6 +5,13 @@
   </head>
   <body>
 
+<% if logged_in? %>
+
+<% else %>
+  <a href='/signup'>Sign up!</a>
+  <a href='/login'>Log in!</a>
+<% end %>
+    
     <div class="container">
 
           <%= yield %>
