@@ -19,11 +19,15 @@ class TweetsController < ApplicationController
 
   post '/tweets' do
     # tweet = Tweet.new()
-    tweet = current_user.tweets.build(content: params[:content])
-    if tweet.save
-      redirect "/tweets/#{tweet.id}"
+    if logged_in?
+      tweet = current_user.tweets.build(content: params[:content])
+      if tweet.save
+        redirect "/tweets/#{tweet.id}"
+      else
+        redirect '/tweets/new'
+      end
     else
-      redirect '/tweets/new'
+      redirect '/login'
     end
 
   end
