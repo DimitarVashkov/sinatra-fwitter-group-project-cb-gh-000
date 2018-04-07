@@ -18,7 +18,6 @@ class TweetsController < ApplicationController
   end
 
   post '/tweets' do
-    # tweet = Tweet.new()
     if logged_in?
       tweet = current_user.tweets.build(content: params[:content])
       if tweet.save
@@ -29,6 +28,5 @@ class TweetsController < ApplicationController
     else
       redirect '/login'
     end
-
   end
 end
