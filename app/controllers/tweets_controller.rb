@@ -47,6 +47,9 @@ class TweetsController < ApplicationController
 
   patch '/tweets/:id' do
     @tweet = Tweet.find_by_id(params[:id])
+
   end
+
+  delete '/tweets/:id'
 
 end
