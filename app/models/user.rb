@@ -3,7 +3,7 @@ has_many :tweets
 has_secure_password
 
   def slug
-    self.name.downcase.gsub(' ','-')
+    username.downcase.gsub(' ','-')
   end
 
   def self.find_by_slug(slug)
