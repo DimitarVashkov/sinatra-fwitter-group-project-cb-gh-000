@@ -7,6 +7,7 @@ class ApplicationController < Sinatra::Base
     set :views, 'app/views'
   end
 
+
   get '/' do
     erb :index
   end
@@ -23,6 +24,7 @@ class ApplicationController < Sinatra::Base
     user = User.new(username: params[:username], email: params[:email], password: params[:password])
 
     if user.save
+      session
     else
       redirect '/signup'
     end
