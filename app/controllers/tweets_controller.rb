@@ -19,7 +19,7 @@ class TweetsController < ApplicationController
 
   post '/tweets' do
     # tweet = Tweet.new()
-    tweet.user = current_user.tweets.build(content: params[:content])
+    tweet = current_user.tweets.build(content: params[:content])
     if tweet.save
       redirect "/tweets/#{tweet.id}"
     else
