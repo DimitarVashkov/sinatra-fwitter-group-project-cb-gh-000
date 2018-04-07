@@ -15,7 +15,7 @@ class ApplicationController < Sinatra::Base
   end
 
   get '/signup' do
-    if !logged_in
+    if !logged_in?
       erb :signup
     else
       redirect '/tweets'
@@ -23,7 +23,7 @@ class ApplicationController < Sinatra::Base
   end
 
   get '/login' do
-      if !logged_in
+      if !logged_in?
         erb :login
       else
         redirect '/tweets'
