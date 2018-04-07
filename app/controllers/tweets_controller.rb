@@ -16,4 +16,10 @@ class TweetsController < ApplicationController
       redirect '/login'
     end
   end
+
+  post '/tweets' do
+    tweet = Tweet.new(params[:content])
+    tweet.user = current_user
+    
+  end
 end
